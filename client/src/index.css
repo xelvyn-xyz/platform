@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --background: #0a0a0a;
+  --accent: #2563EB;
+  --white-90: rgba(255, 255, 255, 0.9);
+  --white-75: rgba(255, 255, 255, 0.75);
+  --white-55: rgba(255, 255, 255, 0.55);
+  --white-45: rgba(255, 255, 255, 0.45);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--background);
+  color: white;
+  font-family: "Space Mono", monospace;
+  line-height: 1.6;
+}
+
+/* Fonts */
+.font-pixel {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.font-mono {
+  font-family: "Space Mono", monospace;
+}
+
+/* Grid overlay background */
+.grid-overlay {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+/* Glass morphism */
+.glass-morphism {
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+
+.glass-morphism:hover {
+  background: rgba(10, 10, 10, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Border glow blue */
+.border-glow-blue {
+  border-color: var(--accent) !important;
+  animation: glow-blue 2s ease-in-out infinite;
+}
+
+@keyframes glow-blue {
+  0%, 100% {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+  }
+  50% {
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+  }
+}
+
+/* Buttons */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, #1d47a1 100%);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-primary-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary-glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  color: var(--white-75);
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white-90);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Cyber topbar */
+.cyber-topbar {
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Health pulse */
+.health-pulse {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Utility classes */
+.text-muted {
+  color: var(--white-30);
+}
+
+.text-secondary {
+  color: var(--white-45);
+}
+
+.text-body {
+  color: var(--white-55);
+}
+
+.text-heading {
+  color: var(--white-90);
+}
+
+.border-subtle {
+  border-color: var(--border-subtle);
+}
